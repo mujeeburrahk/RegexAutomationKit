@@ -142,8 +142,8 @@ DriverManager.setPageTimeOut(LocatorPlatform.WEB, 60);
 DriverManager.launchURL("https://google.com", true);
 Interactions.isElement(ElementState.Present, parseLocatorObject(LocatorPlatform.WEB, "LandingScreen"));
 Interactions.isElement(ElementState.Present, parseLocatorObject(LocatorPlatform.WEB, "LoginTitle"), 10);
-Interactions.enterText(parseLocatorObject(LocatorPlatform.WEB, "LoginField"), "mujeedevm1@yopmail.com", false);
-Interactions.enterText(parseLocatorObject(LocatorPlatform.WEB, "PasswordField"), "Devm1@123", false);
+Interactions.enterText(parseLocatorObject(LocatorPlatform.WEB, "LoginField"), "user@gamil.com", false);
+Interactions.enterText(parseLocatorObject(LocatorPlatform.WEB, "PasswordField"), "123", false);
 Interactions.click(parseLocatorObject(LocatorPlatform.WEB, "SubmitButton"));
 DriverManager.quitDriverInstance(LocatorPlatform.WEB);
 ```
