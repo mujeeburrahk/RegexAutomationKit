@@ -103,9 +103,13 @@ Provides utility methods for managing the lifecycle of an Appium server.
     * Check server status: AppiumUtils.isServerRunning(port)
 ```
 
-##Integration Guide
-This guide explains how to link child projects with this 'RegexAutomationKit' project using Maven. Follow these steps to configure your pom.xml files and import the necessary packages.
-###Step 1: Add Child Projects to this parent project pom.xml
+## Integration Guide
+
+This guide explains how to link child projects with this 'RegexAutomationKit' project using Maven. Follow these steps to
+configure your pom.xml files and import the necessary packages.
+
+### Step 1: Add Child Projects to this parent project pom.xml
+
 ```
 <groupId>org.regexautokit</groupId>
 <artifactId>RegexAutomateKit</artifactId>
@@ -116,7 +120,9 @@ This guide explains how to link child projects with this 'RegexAutomationKit' pr
         <!-- Add more child projects as needed -->
 </modules>
 ```
-###Step 2: Configure Child Projects to use the parent project
+
+### Step 2: Configure Child Projects to use the parent project
+
 ```
 <parent>
         <groupId>org.regexautokit</groupId>
@@ -127,7 +133,9 @@ This guide explains how to link child projects with this 'RegexAutomationKit' pr
 <artifactId>child-project-1</artifactId>
 <version>1.0.0</version>
 ```
-###Step 3: Import Packages in your Child Project
+
+### Step 3: Import Packages in your Child Project
+
 ```
 DriverManager.setWebDriver();
 DriverManager.setPageTimeOut(LocatorPlatform.WEB, 60);
