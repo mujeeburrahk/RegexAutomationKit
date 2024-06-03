@@ -102,3 +102,40 @@ Provides utility methods for managing the lifecycle of an Appium server.
     * Stop the server: AppiumUtils.stopServer()
     * Check server status: AppiumUtils.isServerRunning(port)
 ```
+
+##Integration Guide
+This guide explains how to link child projects with this 'RegexAutomationKit' project using Maven. Follow these steps to configure your pom.xml files and import the necessary packages.
+###Step 1: Add Child Projects to this parent project pom.xml
+```
+<groupId>org.regexautokit</groupId>
+<artifactId>RegexAutomateKit</artifactId>
+<version>1.0.0</version>
+<modules>
+        <module>child-project-1</module>
+        <module>child-project-2</module>
+        <!-- Add more child projects as needed -->
+</modules>
+```
+###Step 2: Configure Child Projects to use the parent project
+```
+<parent>
+        <groupId>org.regexautokit</groupId>
+        <artifactId>RegexAutomateKit</artifactId>
+        <version>1.0.0</version>
+</parent>
+<groupId>com.yourcompany.child</groupId>
+<artifactId>child-project-1</artifactId>
+<version>1.0.0</version>
+```
+###Step 3: Import Packages in your Child Project
+```
+DriverManager.setWebDriver();
+DriverManager.setPageTimeOut(LocatorPlatform.WEB, 60);
+DriverManager.launchURL("https://google.com", true);
+Interactions.isElement(ElementState.Present, parseLocatorObject(LocatorPlatform.WEB, "LandingScreen"));
+Interactions.isElement(ElementState.Present, parseLocatorObject(LocatorPlatform.WEB, "LoginTitle"), 10);
+Interactions.enterText(parseLocatorObject(LocatorPlatform.WEB, "LoginField"), "mujeedevm1@yopmail.com", false);
+Interactions.enterText(parseLocatorObject(LocatorPlatform.WEB, "PasswordField"), "Devm1@123", false);
+Interactions.click(parseLocatorObject(LocatorPlatform.WEB, "SubmitButton"));
+DriverManager.quitDriverInstance(LocatorPlatform.WEB);
+```
